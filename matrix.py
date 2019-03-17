@@ -7,8 +7,8 @@
 
 import time
 import threading
-from random import randint
 from getch import getch
+from random import randint
 import unicornhathd
 
 def input_thread(a_list):
