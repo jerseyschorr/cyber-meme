@@ -142,18 +142,23 @@ def go(style=0):
     a_list = []
     threading.Thread(target=input_thread, args=(a_list,)).start()
 
-    while not a_list:
-        for i in range(100):
-            for y in range(u_height):
-                for x in range(u_width):
-                    r, g, b = effect(x, y, step)
-                    r = int(max(0, min(255, r)))
-                    g = int(max(0, min(255, g)))
-                    b = int(max(0, min(255, b)))
-                    unicornhathd.set_pixel(x, y, r, g, b)
+    i = 0
+    while ((not a_list) and (i < 100)):
+        if i == 99:
+          i = 0
+        else:
+          i = i + 1
 
-            step += 2
+        for y in range(u_height):
+            for x in range(u_width):
+                r, g, b = effect(x, y, step)
+                r = int(max(0, min(255, r)))
+                g = int(max(0, min(255, g)))
+                b = int(max(0, min(255, b)))
+                unicornhathd.set_pixel(x, y, r, g, b)
 
-            unicornhathd.show()
+        step += 2
+
+        unicornhathd.show()
 
     unicornhathd.off()
