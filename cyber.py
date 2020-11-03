@@ -5,6 +5,7 @@ import looptest
 import matrix
 import showpng
 import demo
+import clockText
 import scrollText
 import heartbeats
 import rainbow
@@ -35,7 +36,7 @@ def cyber():
             print("Stopping Heart")
         elif(key == 'e'):
             text = "Happy Purim!"
-            scrollText.scrollText(text, 'en', False, (0,0,255))
+            clockText.clockText(text, (0,0,255))
         elif(key == 's'):
             text = ur"   חמש  םירופ  גח"
             scrollText.scrollText(text, 'he', True)
